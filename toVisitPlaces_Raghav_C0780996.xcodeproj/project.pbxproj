@@ -13,8 +13,10 @@
 		BD2B30BC249AE71700046082 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD2B30BB249AE71700046082 /* Main.storyboard */; };
 		BD2B30BE249AE73800046082 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD2B30BD249AE73800046082 /* LaunchScreen.storyboard */; };
 		BD2B30C1249AEF0700046082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD2B30C0249AEF0600046082 /* Assets.xcassets */; };
-		BD2B30C3249AF1C100046082 /* FavPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2B30C2249AF1C100046082 /* FavPlaces.swift */; };
+		BD2B30C3249AF1C100046082 /* FavouritePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2B30C2249AF1C100046082 /* FavouritePlace.swift */; };
 		BD2B30C5249AF26000046082 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2B30C4249AF26000046082 /* FavouritesViewController.swift */; };
+		BD2B30C9249AFEA700046082 /* EditMarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2B30C8249AFEA700046082 /* EditMarkerViewController.swift */; };
+		BD2B30CD249B01E000046082 /* Extension+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2B30CC249B01E000046082 /* Extension+TableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +28,10 @@
 		BD2B30BB249AE71700046082 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BD2B30BD249AE73800046082 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD2B30C0249AEF0600046082 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BD2B30C2249AF1C100046082 /* FavPlaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavPlaces.swift; sourceTree = "<group>"; };
+		BD2B30C2249AF1C100046082 /* FavouritePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritePlace.swift; sourceTree = "<group>"; };
 		BD2B30C4249AF26000046082 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		BD2B30C8249AFEA700046082 /* EditMarkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMarkerViewController.swift; sourceTree = "<group>"; };
+		BD2B30CC249B01E000046082 /* Extension+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+TableView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +66,8 @@
 			children = (
 				BD2B30A5249AE4D200046082 /* AppDelegate.swift */,
 				BD2B30A7249AE4D200046082 /* SceneDelegate.swift */,
-				BD2B30C2249AF1C100046082 /* FavPlaces.swift */,
+				BD2B30CC249B01E000046082 /* Extension+TableView.swift */,
+				BD2B30C2249AF1C100046082 /* FavouritePlace.swift */,
 				BD2B30BF249AED4800046082 /* VC's */,
 				BD2B30BB249AE71700046082 /* Main.storyboard */,
 				BD2B30C0249AEF0600046082 /* Assets.xcassets */,
@@ -77,6 +82,7 @@
 			children = (
 				BD2B30A9249AE4D300046082 /* MapViewController.swift */,
 				BD2B30C4249AF26000046082 /* FavouritesViewController.swift */,
+				BD2B30C8249AFEA700046082 /* EditMarkerViewController.swift */,
 			);
 			path = "VC's";
 			sourceTree = "<group>";
@@ -152,11 +158,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD2B30C9249AFEA700046082 /* EditMarkerViewController.swift in Sources */,
 				BD2B30AA249AE4D300046082 /* MapViewController.swift in Sources */,
 				BD2B30A6249AE4D200046082 /* AppDelegate.swift in Sources */,
+				BD2B30CD249B01E000046082 /* Extension+TableView.swift in Sources */,
 				BD2B30A8249AE4D200046082 /* SceneDelegate.swift in Sources */,
 				BD2B30C5249AF26000046082 /* FavouritesViewController.swift in Sources */,
-				BD2B30C3249AF1C100046082 /* FavPlaces.swift in Sources */,
+				BD2B30C3249AF1C100046082 /* FavouritePlace.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
