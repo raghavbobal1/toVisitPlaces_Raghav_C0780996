@@ -51,7 +51,11 @@
                         <viewLayoutGuide key="safeArea" id="ong-0g-WQu"/>
                     </view>
                     <navigationItem key="navigationItem" id="fZ1-Em-6zF">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="MbJ-IY-VEE" userLabel="addbtn"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="MbJ-IY-VEE" userLabel="addbtn">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="Bdc-bf-dBf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0wi-4V-Rcs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -67,7 +71,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LjZ-8D-kLg">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleAspectFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Iy9-5F-bjP">
                                 <rect key="frame" x="10" y="787" width="394" height="40"/>
@@ -121,7 +125,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="right" axis="vertical" distribution="equalSpacing" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="16w-97-vV7">
-                                <rect key="frame" x="369" y="44" width="35" height="100"/>
+                                <rect key="frame" x="369" y="88" width="35" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0e-uf-lXt" userLabel="btnZoomIn">
                                         <rect key="frame" x="0.0" y="0.5" width="35" height="34"/>
@@ -168,6 +172,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="l7s-CZ-DT3"/>
                     <connections>
                         <outlet property="btnCar" destination="5XT-bL-r9l" id="iNP-hm-5Ay"/>
                         <outlet property="btnNav" destination="H0A-iA-Rrs" id="CFw-ha-zF3"/>
@@ -180,6 +185,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1122" y="145"/>
+        </scene>
+        <!--EditViewController-->
+        <scene sceneID="zZ8-np-4Ai">
+            <objects>
+                <viewController id="a8d-W3-PmU" userLabel="EditViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PH8-FC-GFx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RMk-ho-MW2" userLabel="editMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="W4a-Dz-mqv"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1kf-3r-0O7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2015.9420289855075" y="144.64285714285714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SVr-KQ-J1C">
