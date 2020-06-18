@@ -10,9 +10,9 @@
 		BD2B30A6249AE4D200046082 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2B30A5249AE4D200046082 /* AppDelegate.swift */; };
 		BD2B30A8249AE4D200046082 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2B30A7249AE4D200046082 /* SceneDelegate.swift */; };
 		BD2B30AA249AE4D300046082 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2B30A9249AE4D300046082 /* MapViewController.swift */; };
-		BD2B30BA249AE6F200046082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD2B30B9249AE6F200046082 /* Assets.xcassets */; };
 		BD2B30BC249AE71700046082 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD2B30BB249AE71700046082 /* Main.storyboard */; };
 		BD2B30BE249AE73800046082 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD2B30BD249AE73800046082 /* LaunchScreen.storyboard */; };
+		BD2B30C1249AEF0700046082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD2B30C0249AEF0600046082 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,9 +21,9 @@
 		BD2B30A7249AE4D200046082 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BD2B30A9249AE4D300046082 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BD2B30B3249AE50800046082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BD2B30B9249AE6F200046082 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../FindWay_ Raghav_C0780996/FindWay_ Raghav_C0780996/Assets.xcassets"; sourceTree = "<group>"; };
 		BD2B30BB249AE71700046082 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BD2B30BD249AE73800046082 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BD2B30C0249AEF0600046082 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +58,21 @@
 			children = (
 				BD2B30A5249AE4D200046082 /* AppDelegate.swift */,
 				BD2B30A7249AE4D200046082 /* SceneDelegate.swift */,
-				BD2B30A9249AE4D300046082 /* MapViewController.swift */,
+				BD2B30BF249AED4800046082 /* VC's */,
 				BD2B30BB249AE71700046082 /* Main.storyboard */,
-				BD2B30B9249AE6F200046082 /* Assets.xcassets */,
+				BD2B30C0249AEF0600046082 /* Assets.xcassets */,
 				BD2B30BD249AE73800046082 /* LaunchScreen.storyboard */,
 				BD2B30B3249AE50800046082 /* Info.plist */,
 			);
 			path = toVisitPlaces_Raghav_C0780996;
+			sourceTree = "<group>";
+		};
+		BD2B30BF249AED4800046082 /* VC's */ = {
+			isa = PBXGroup;
+			children = (
+				BD2B30A9249AE4D300046082 /* MapViewController.swift */,
+			);
+			path = "VC's";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD2B30BE249AE73800046082 /* LaunchScreen.storyboard in Resources */,
-				BD2B30BA249AE6F200046082 /* Assets.xcassets in Resources */,
+				BD2B30C1249AEF0700046082 /* Assets.xcassets in Resources */,
 				BD2B30BC249AE71700046082 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
