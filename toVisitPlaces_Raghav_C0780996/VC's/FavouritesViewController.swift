@@ -119,7 +119,7 @@ class FavouritesViewController: UITableViewController {
             defaults.set(editedPlace.placeLong, forKey: "longitude")
             defaults.set(true, forKey: "bool")
             defaults.set(indexPath.row, forKey: "edit")
-            let mapVC = self.storyboard?.instantiateViewController(withIdentifier: "editMarkerVC") as! EditViewController
+            let mapVC = self.storyboard?.instantiateViewController(withIdentifier: "editMarkerVC") as! EditMarkerViewController
             self.navigationController?.pushViewController(mapVC, animated: true)
         }
 
