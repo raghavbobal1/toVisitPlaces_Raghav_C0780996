@@ -17,6 +17,7 @@
 		BD2B30C5249AF26000046082 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2B30C4249AF26000046082 /* FavouritesViewController.swift */; };
 		BD2B30C9249AFEA700046082 /* EditMarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2B30C8249AFEA700046082 /* EditMarkerViewController.swift */; };
 		BD2B30CD249B01E000046082 /* Extension+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2B30CC249B01E000046082 /* Extension+TableView.swift */; };
+		BD2B30CF249B0DC900046082 /* Extension+MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2B30CE249B0DC900046082 /* Extension+MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		BD2B30C4249AF26000046082 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		BD2B30C8249AFEA700046082 /* EditMarkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMarkerViewController.swift; sourceTree = "<group>"; };
 		BD2B30CC249B01E000046082 /* Extension+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+TableView.swift"; sourceTree = "<group>"; };
+		BD2B30CE249B0DC900046082 /* Extension+MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+MapViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				BD2B30A5249AE4D200046082 /* AppDelegate.swift */,
 				BD2B30A7249AE4D200046082 /* SceneDelegate.swift */,
+				BD2B30CE249B0DC900046082 /* Extension+MapViewController.swift */,
 				BD2B30CC249B01E000046082 /* Extension+TableView.swift */,
 				BD2B30C2249AF1C100046082 /* FavouritePlace.swift */,
 				BD2B30BF249AED4800046082 /* VC's */,
@@ -161,6 +164,7 @@
 				BD2B30C9249AFEA700046082 /* EditMarkerViewController.swift in Sources */,
 				BD2B30AA249AE4D300046082 /* MapViewController.swift in Sources */,
 				BD2B30A6249AE4D200046082 /* AppDelegate.swift in Sources */,
+				BD2B30CF249B0DC900046082 /* Extension+MapViewController.swift in Sources */,
 				BD2B30CD249B01E000046082 /* Extension+TableView.swift in Sources */,
 				BD2B30A8249AE4D200046082 /* SceneDelegate.swift in Sources */,
 				BD2B30C5249AF26000046082 /* FavouritesViewController.swift in Sources */,

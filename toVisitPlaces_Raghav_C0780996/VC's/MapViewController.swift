@@ -16,6 +16,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var longitude: CLLocationDegrees??
     var location: CLLocation?
     
+    var favoritePlaces: [FavoritePlace]?
+    
+    var favoriteAddress: String?
+    var favLocation: CLLocation?
+    let defaults = UserDefaults.standard
+    var lat: Double = 0.0
+      var long: Double = 0.0
+      var drag: Bool = false
+      
+    
         override func viewDidLoad()
         {
             super.viewDidLoad()
@@ -32,8 +42,77 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             mapView.isZoomEnabled = false
 
             addDoubleTap()
+            loadData()
             
       }
+    
+    
+     func getDataFilePath() -> String
+            {
+                //Getting path to txt file
+                let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+                let filePath = documentPath.appending("/places-data.txt")
+                return filePath
+            }
+                
+            func loadData()
+            {
+                favoritePlaces = [FavoritePlace]()
+                    
+                let filePath = getDataFilePath()
+                    
+                if FileManager.default.fileExists(atPath: filePath)
+                {
+                    do
+                      {
+                        //Reading content from file path string
+                         let fileContent = try String(contentsOfFile: filePath)
+                         let contentArray = fileContent.components(separatedBy: "\n")
+                         for content in contentArray
+                         {
+                               
+                            let placeContent = content.components(separatedBy: ",")
+                            if placeContent.count == 6
+                                {
+                                    let place = FavoritePlace(placeLat: Double(placeContent[0]) ?? 0.0, placeLong: Double(placeContent[1]) ?? 0.0, placeName: placeContent[2], city: placeContent[3], postalCode: placeContent[4], country: placeContent[5])
+                                    favoritePlaces?.append(place)
+                                }
+                         }
+                      }
+                        catch
+                        {
+                            print(error)
+                        }
+                 }
+             }
+                
+            override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+            {
+                if let sbPlacesList = segue.destination as? FavouritesViewController{
+                sbPlacesList.places = self.favoritePlaces
+            }
+    }
+                
+                 
+            func saveData()
+            {
+                let filePath = getDataFilePath()
+                var saveString = ""
+                for place in favoritePlaces!
+                {
+                    saveString = "\(saveString)\(place.placeLat),\(place.placeLong),\(place.placeName),\(place.city),\(place.country),\(place.postalCode)\n"
+                         do
+                         {
+                            try saveString.write(toFile: filePath, atomically: true, encoding: .utf8)
+                         }
+                         catch
+                         {
+                             print(error)
+                         }
+                }
+            }
+        
+    
         func addDoubleTap()
         {
             let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
@@ -209,38 +288,37 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     })
         }
     
-}
+    
+    func getFavLocation()
+    {
+    //Using reverse geolocation to get address information
+    CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: latitude as! CLLocationDegrees, longitude: longitude as! CLLocationDegrees)) {  placemark, error in
+      if let error = error as? CLError
+      {
+          print("CLError:", error)
+          return
+      }
+      else if let placemark = placemark?[0]
+      {
+       
+       var placeName = ""
+       var city = ""
+       var postalCode = ""
+       var country = ""
+       
+       // Getting address information from placemarks
+       if let name = placemark.name { placeName += name }
+       if let locality = placemark.subLocality { city += locality }
+       if let code = placemark.postalCode { postalCode += code }
+       if let country_pc = placemark.country { country += country_pc }
 
-extension MapViewController: MKMapViewDelegate {
-        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
-        {
-            //Show nothing if loction is user's location
-            
-            if annotation is MKUserLocation {
-                return nil
+        let place = FavoritePlace(placeLat: self.latitude as! Double, placeLong:self.longitude as! Double, placeName: placeName, city: city, postalCode: postalCode, country: country)
+     
+       self.favoritePlaces?.append(place)
+       self.saveData()
+       self.navigationController?.popToRootViewController(animated: true)
             }
-            
-            //Adding a custom pin
-            let pinAnnotation = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "droppablePin")
-            pinAnnotation.pinTintColor = UIColor.blue
-            pinAnnotation.canShowCallout = true
-            
-            //Adding custom button
-            let button = UIButton()
-            button.setImage(UIImage(named :"heart")?.withRenderingMode(.alwaysTemplate), for: .normal)
-            button.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
-            pinAnnotation.rightCalloutAccessoryView = button
-            
-            return pinAnnotation
         }
-
-        func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl)
-        {
-            //Alert user that he has successfully added the location
-            let alertController = UIAlertController(title: "Success", message: "Location Added to favorites", preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(cancelAction)
-            present(alertController, animated: true, completion: nil)
-        }
+    }
     
 }

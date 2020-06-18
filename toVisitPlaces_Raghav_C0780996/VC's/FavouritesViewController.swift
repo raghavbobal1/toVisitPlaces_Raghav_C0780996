@@ -87,7 +87,7 @@ class FavouritesViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         
         if places!.count == 0 {
-        self.tableView.setEmptyMessage("No favorite places, press the plus button to add a new one!")
+        self.tableView.setEmptyMessage("No favorites are saved, press the plus sign to add your favourite places.")
         } else {
         self.tableView.restore()
         }
